@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class ClientSide {
     private static InetAddress host;
-    private static final int PORT = 1234;
+    private static final int PORT = 4444;
 
     public static void main(String[] args){
 
@@ -33,12 +33,12 @@ public class ClientSide {
             Scanner inputEntry = new Scanner(System.in);
             String message, response;
             do {
-                System.out.println("ENTER MESSAGE: ");
+                System.out.println("ENTER COMMAND: ");
                 message = inputEntry.nextLine();
                 output.println(message);
                 response = input.nextLine();
                 System.out.println("\nSERVER > " + response);
-            } while (!message.equals("***CLOSE***"));
+            } while (!message.equals("CLOSE"));
 
         } catch (IOException ioException){
             ioException.printStackTrace();
